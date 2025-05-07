@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                // NerdPlatoon brand colors
+                nerd: {
+                    orange: '#F97316',
+                    green: '#65A30A',
+                    blue: '#0EA5E9',
+                    darkBlue: '#0369A1',
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +92,38 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'fade-in': {
+                    '0%': {
+                        opacity: '0',
+                        transform: 'translateY(10px)'
+                    },
+                    '100%': {
+                        opacity: '1',
+                        transform: 'translateY(0)'
+                    }
+                },
+                'fade-in-right': {
+                    '0%': {
+                        opacity: '0',
+                        transform: 'translateX(20px)'
+                    },
+                    '100%': {
+                        opacity: '1',
+                        transform: 'translateX(0)'
+                    }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'fade-in': 'fade-in 0.7s ease-out forwards',
+                'fade-in-right': 'fade-in-right 0.7s ease-out forwards'
+			},
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                'hero-pattern': 'linear-gradient(to right bottom, rgba(14, 165, 233, 0.05), rgba(249, 115, 22, 0.05))',
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
